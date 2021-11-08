@@ -1,0 +1,50 @@
+#include<iostream>
+#include<stack>
+#include<queue>
+using namespace std;
+
+void rev(queue < int > & q) {
+    if (q.empty()) {
+
+        // If the queue is empty, return.
+        return;
+    }
+
+    int element = q.front();
+    q.pop();
+
+    // Recursively call for the rest of the queue.
+    reverse(q);
+
+    q.push(element);
+}
+
+
+void printQueue(queue<int> q)
+{
+
+    while(!q.empty())
+    {
+        cout<<q.front()<<" ";
+        q.pop();
+}
+    cout<<endl;
+}
+
+int main()
+{
+    queue<int> q;
+    for(int i=1;i<=10;i++)
+    {
+        q.push(i);
+    }
+    cout<<"Queue before Reversing: ";
+    printQueue(q);
+   
+    rev(q);
+
+    cout<<"Queue after Reversing: ";
+    printQueue(q);
+}
+
+Readme: Reverse the queue.
